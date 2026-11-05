@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/football_platform.egg-info/PKG-INFO
+src/football_platform.egg-info/SOURCES.txt
+src/football_platform.egg-info/dependency_links.txt
+src/football_platform.egg-info/requires.txt
+src/football_platform.egg-info/top_level.txt
+src/fp/__init__.py
+tests/test_smoke.py
