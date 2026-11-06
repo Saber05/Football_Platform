@@ -1,7 +1,7 @@
 # football-platform
 
 Plateforme data : données de suivi de matchs -> KPI et profils joueurs -> API et dashboard.
-Données de départ : SkillCorner Open Data (licence MIT, merci à SkillCorner).
+Données de départ : SkillCorner Open Data (licence MIT).
 
 ## Démarrer
     python -m venv .venv
