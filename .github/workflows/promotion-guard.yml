@@ -1,0 +1,28 @@
+name: Promotion guard
+
+on:
+  pull_request:
+    branches: [recette, main]
+
+permissions:
+  contents: read
+
+jobs:
+  check-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch
+        env:
+          BASE: ${{ github.base_ref }}
+          HEAD: ${{ github.head_ref }}
+        run: |
+          echo "PR: $HEAD -> $BASE"
+          if [ "$BASE" = "recette" ] && [ "$HEAD" != "dev" ]; then
+            echo "Only dev can be promoted to recette."
+            exit 1
+          fi
+          if [ "$BASE" = "main" ] && [ "$HEAD" != "recette" ] && [[ "$HEAD" != hotfix/* ]]; then
+            echo "Only recette and hotfix/* can be merged into main."
+            exit 1
+          fi
+          echo "Valid promotion flow."
