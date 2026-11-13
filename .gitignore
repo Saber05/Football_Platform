@@ -1,8 +1,16 @@
 .venv/
 __pycache__/
 .env
+.env.*
+!.env.example
 data/
 out/
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+infra/terraform/**/.terraform/
+infra/terraform/**/*.tfstate*
+infra/terraform/**/*.tfvars
 .pytest_cache/
 .ruff_cache/
 .DS_Store
